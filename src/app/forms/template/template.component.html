@@ -1,0 +1,22 @@
+<h4>Template Driven Form</h4>
+<form #scoreForm="ngForm" (ngSubmit)="submitForm(scoreForm)">
+    Name: <input type="text" [(ngModel)]="fullname" name="myfullname" placeholder="Your name...." required>{{fullname}}
+    <br>
+    Score: <input type="number" [(ngModel)]="score" name="myscore" required> {{score}}
+    <br>
+    City:
+    <select [(ngModel)]="city" name="mycity">
+        <option value="chennai">Chennai</option>
+        <option value="bengaluru">Bengaluru</option>
+        <option value="pune">Pune</option>
+    </select>
+    {{city}}
+    <br>
+    <button type="submit" [disabled]="scoreForm.invalid">Submit</button>
+</form>
+
+<ol>
+    <li *ngFor="let u of users">
+        {{u.myfullname}}
+    </li>
+</ol>

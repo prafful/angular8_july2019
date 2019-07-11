@@ -1,0 +1,12 @@
+<h3>Todo Manager</h3>
+Todo: 
+<input type="text" [(ngModel)]="todo">{{todo}}
+<button (click)="addTask()">Add</button>
+<br>
+All Todo:
+<ul>
+    <li *ngFor="let t of tasks; let currentTask = index">
+        {{t}}
+        <button (click)="deleteTask(currentTask)">X</button>
+    </li>
+</ul>

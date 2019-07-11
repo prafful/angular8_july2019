@@ -1,0 +1,105 @@
+<p>ngfor-component works!</p>
+Score: {{   score     }}
+<br>
+Scores: {{ scores[0]  + 5}}, {{ scores[2]  + 5}}
+<br>
+Using ngFor (use it for element which is iterating):
+
+<ul>
+    <li *ngFor="let s of scores; let counter = index">{{ s }} at {{ counter }}</li>
+    
+</ul>
+Friends:
+<ol>
+    <li *ngFor="let f of friends; let counter = index">
+        <span (click)="friendClicked(counter)">{{ f }}</span>
+    </li>
+</ol>
+Friend Scores (Array of JSON Objects):
+<ol>
+    <li *ngFor="let fs of friendScores">{{ fs.name }} with score of {{fs.score}}</li>
+</ol>
+<table border="1">
+<thead>
+    <tr>
+        <th>Action</th>
+        <th>S.no</th>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let fs of friendScores; let counter = index">
+        <td> {{ counter +1 }} </td>
+        <td>{{ fs.name }}</td>
+        <td  > {{ fs.score }} </td>
+      <td>
+        <button (click)="getMe(counter)">Click</button>
+    </td>
+    </tr>
+</tbody>
+</table>
+<hr>
+ngIf Directive:
+<br>
+Name: 
+<span *ngIf="display; else nodisplay1">  
+      {{ name }} 
+</span>
+<ng-template #nodisplay1> No Name 1!!!!</ng-template>
+<ng-template #nodisplay2> No Name 2!!!!</ng-template>
+<br>
+Multiple Else If:
+<br>
+<span *ngIf="score===10; else temp1">
+    {{score}}        
+</span>
+<ng-template #temp1>
+    <span *ngIf="score === 20; else temp2">
+        {{score}}
+    </span>
+</ng-template>
+<ng-template #temp2>
+        <span *ngIf="score === 30; else temp3">
+            {{score}}
+        </span>
+    </ng-template>
+    <ng-template #temp3>
+            <span>
+                {{score}} is invalid!!!!
+            </span>
+        </ng-template>
+    <hr>
+    ngSwitch Example:
+    <br>
+    Name:
+    <div [ngSwitch]="name" >
+        <span *ngSwitchCase="'prafful'">
+            <h2>PD</h2>
+        </span>
+        <span *ngSwitchCase="'chennai'">
+                <h2>MAA</h2>
+        </span>
+        <span *ngSwitchCase="'india'">
+                <h2>IND</h2>
+        </span>
+        <span *ngSwitchDefault>
+                <h2>NA</h2>
+        </span>
+    </div>
+    <br>
+    Score:
+    <div [ngSwitch]="score" >
+        <span *ngSwitchCase='10'>
+            <h2>Ten</h2>
+        </span>
+        <span *ngSwitchCase='20'>
+                <h2>Twenty</h2>
+        </span>
+        <span *ngSwitchCase='30'>
+                <h2>Thirty</h2>
+        </span>
+        <span *ngSwitchDefault>
+                <h2>Invalid Score</h2>
+        </span>
+    </div>    

@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'praffuldaga',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'angularFirst';
+export class RootComponent {
+  title = 'India First';
+  name = "Prafful Daga"
+  Orange = 8
+
+  sayHello(){
+    return "Hello from method!"  
+  }
+
+  callSayHello(){
+    return this.sayHello()
+  }
 }
