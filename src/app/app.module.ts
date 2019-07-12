@@ -16,6 +16,7 @@ import { InbuiltComponent } from './pipe/inbuilt/inbuilt.component';
 import { TodoComponent } from './myapp/todo/todo.component';
 import { TemplateComponent } from "./forms/template/template.component";
 import { ReactiveComponent } from './forms/reactive/reactive.component';
+import { FormComponent } from './forms/form/form.component';
 
 @NgModule(
   {
@@ -31,7 +32,8 @@ import { ReactiveComponent } from './forms/reactive/reactive.component';
     InbuiltComponent, 
     TodoComponent, 
     TemplateComponent, 
-    ReactiveComponent 
+    ReactiveComponent, 
+    FormComponent 
   ],
   imports: [ 
     BrowserModule,
@@ -64,13 +66,26 @@ import { ReactiveComponent } from './forms/reactive/reactive.component';
         component:TodoComponent
       },
       {
-        path:'template',
-        component:TemplateComponent
-      },
-      {
-        path:'reactive',
-        component:ReactiveComponent
+        path:'form',
+        component:FormComponent,
+        children:[
+          {
+            path:"",
+            redirectTo:'template',
+            pathMatch:'full'
+          },
+          {
+          path:'template',
+          component:TemplateComponent
+        },
+        {
+          path:'reactive',
+          component:ReactiveComponent
+        }
+      ]
       }
+
+      
     ]) 
   ],
   providers: [],

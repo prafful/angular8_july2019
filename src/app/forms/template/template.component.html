@@ -12,11 +12,18 @@
     </select>
     {{city}}
     <br>
+    Date: <input type="date" [(ngModel)]="datevalue" name="mydate"> {{datevalue}}
+    <br>
+    Rate: <input type="range" [(ngModel)]="rating" name="myrating">{{rating}}
+    <br>
     <button type="submit" [disabled]="scoreForm.invalid">Submit</button>
 </form>
 
 <ol>
-    <li *ngFor="let u of users">
-        {{u.myfullname}}
+    <li *ngFor="let u of users; let current = index">
+        <iframe width="240" height="120"  [src]="sanitizer.bypassSecurityTrustResourceUrl(u.myfullname)" frameborder="1"></iframe>
     </li>
 </ol>
+
+<iframe width="240" height="120"  src="https://www.youtube.com/embed/ZaXm6wau-jc" frameborder="1">
+</iframe>

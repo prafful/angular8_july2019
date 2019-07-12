@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: 'cts-template',
@@ -22,7 +23,13 @@ export class TemplateComponent implements OnInit {
     console.log(this.users);
   }
 
-  constructor() { }
+  videoURL = function(cur){
+    console.log(cur);
+    console.log(this.users[0].myfullname);
+    return this.users[0].myfullname
+  }
+
+  constructor(public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
