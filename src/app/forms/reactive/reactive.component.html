@@ -1,0 +1,16 @@
+<h4>Reactive Driven Form</h4>
+<form [formGroup]="scoreForm" (ngSubmit)="submitForm(scoreForm)">
+    Name: <input type="text" formControlName="fname">{{fullname}}
+    <br>
+    Score: <input type="number" formControlName="score"> {{score}}
+    <br>
+    City:
+    <select formControlName="city">
+        <option value="chennai">Chennai</option>
+        <option value="bengaluru">Bengaluru</option>
+        <option value="pune">Pune</option>
+    </select>
+    {{city}}
+    <br>
+    <button type="submit" [disabled]="scoreForm.invalid">Submit</button>
+</form>

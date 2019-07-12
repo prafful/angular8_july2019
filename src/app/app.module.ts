@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { RootComponent } from './app.component';
 import { LogoComponent } from './logo/logo.component';
@@ -14,6 +15,7 @@ import { NgforComponentComponent } from './directive/ngfor-component/ngfor-compo
 import { InbuiltComponent } from './pipe/inbuilt/inbuilt.component';
 import { TodoComponent } from './myapp/todo/todo.component';
 import { TemplateComponent } from "./forms/template/template.component";
+import { ReactiveComponent } from './forms/reactive/reactive.component';
 
 @NgModule(
   {
@@ -28,11 +30,13 @@ import { TemplateComponent } from "./forms/template/template.component";
     NgforComponentComponent, 
     InbuiltComponent, 
     TodoComponent, 
-    TemplateComponent 
+    TemplateComponent, 
+    ReactiveComponent 
   ],
   imports: [ 
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path:"",
@@ -62,6 +66,10 @@ import { TemplateComponent } from "./forms/template/template.component";
       {
         path:'template',
         component:TemplateComponent
+      },
+      {
+        path:'reactive',
+        component:ReactiveComponent
       }
     ]) 
   ],
