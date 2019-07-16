@@ -9,7 +9,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class ReactiveComponent implements OnInit {
 
   scoreForm:any
-
+  fname:any
+  score:any
+  city: any
   constructor() { }
   
   submitForm = function(sf){

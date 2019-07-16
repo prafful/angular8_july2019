@@ -12,8 +12,10 @@ export class TemplateComponent implements OnInit {
 
   scoreForm
   fullname =""
-  //score=8
+  score=8
   city=""
+  datevalue = new Date()
+  rating = 0
 
   submitForm = function(sf){
     console.log(sf);
