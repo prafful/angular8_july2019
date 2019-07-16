@@ -99,6 +99,10 @@ import { RemoteEmployeeComponent } from './consume/remote-employee/remote-employ
       {
         path:'consume-remote',
         component:RemoteComponent
+      },
+      {
+        path:'employee',
+        component:RemoteEmployeeComponent
       }
 
       
