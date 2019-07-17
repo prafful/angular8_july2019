@@ -5,6 +5,17 @@
     Name: {{selectedEmployee}}
 </div>
 <div>
+    <form #employeeForm="ngForm">
+            Id: {{ myid}} <br>
+            Name: <input type="text" name="name" [(ngModel)]="myname"><br>
+            Age: <input type="number" name="age" [(ngModel)]="myage"> <br>
+            Salary: <input type="number" name="salary" [(ngModel)]="mysalary"><br>
+            <button (click)="addEmployee(employeeForm)">Add Employee</button> &nbsp;
+            <button (click)="updateEmployeeNow()"> Update Employee </button>
+    </form>
+    
+</div>
+<div>
     <table border="1">
         <thead>
             <tr>
@@ -24,6 +35,7 @@
                 <td>
                     <button (click)="viewEmployee(counter)">View</button>
                     <button (click)="deleteEmployee(counter)">Del</button>
+                    <button (click)="updateEmployee(counter)">Update</button>
                 </td>
             </tr>
         </tbody>
