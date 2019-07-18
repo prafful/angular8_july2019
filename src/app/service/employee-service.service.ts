@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -13,7 +14,8 @@ export class EmployeeServiceService {
    return  this.http.get("	http://dummy.restapiexample.com/api/v1/employees")
   }
 
-  getEmployeeById(employeeId){
+  //public Integer getAge()
+  getEmployeeById(employeeId):Observable<any>{
     return this.http.get("http://dummy.restapiexample.com/api/v1/employee/" + employeeId)
   }
 

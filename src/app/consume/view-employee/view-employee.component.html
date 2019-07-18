@@ -1,0 +1,19 @@
+<h1>Details</h1>
+<div *ngIf="employee; else comingsoon">
+    Name: {{ employee.employee_name }}
+    <br>
+    Salalry: {{ employee.employee_salary }}
+
+    <br>
+    Age: {{ employee.employee_salary }}
+
+    <br>
+    Id: {{ employee.id }}
+</div>
+
+<ng-template #comingsoon>
+    <h3>Loading employee data....></h3>
+</ng-template>
+
+<br><br><br><br><br>
+<button (click)="viewAll()">All</button>

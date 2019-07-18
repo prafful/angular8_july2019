@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeServiceService } from "../../service/employee-service.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cts-remote-employee',
@@ -17,7 +18,7 @@ export class RemoteEmployeeComponent implements OnInit {
   mysalary = 0
   myid = 0
 
-  constructor(private empService:EmployeeServiceService) { }
+  constructor(private empService:EmployeeServiceService, private router:Router) { }
 
   getAllEmployees = function(){
     this.empService.getAllEmployees().subscribe((response)=>{
@@ -29,6 +30,10 @@ export class RemoteEmployeeComponent implements OnInit {
 
   ngOnInit() {
     this.getAllEmployees()
+
+    
+
+
   }
 
   viewEmployee = function(selectedEmployee){
@@ -84,8 +89,14 @@ export class RemoteEmployeeComponent implements OnInit {
         console.log(response);
         this.getAllEmployees()
       })          
-
   
+      }
+ 
+      viewInSPA = function(selectedId){
+        this.selected = this.allEmployees[selectedId].id
+        this.router.navigate(['/viewemployee', this.selected ])    
+
+      }
   }
 
 
@@ -104,4 +115,4 @@ export class RemoteEmployeeComponent implements OnInit {
 
 
 
-}
+

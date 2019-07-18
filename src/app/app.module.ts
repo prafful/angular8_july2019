@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { RootComponent } from './app.component';
 import { LogoComponent1 } from './logo/logo.component';
@@ -21,6 +22,8 @@ import { FormComponent } from './forms/form/form.component';
 import { Useservice1Component } from "./useservice/useservice1/useservice1.component";
 import { RemoteComponent } from './consume/remote/remote.component';
 import { RemoteEmployeeComponent } from './consume/remote-employee/remote-employee.component';
+import { ViewEmployeeComponent } from './consume/view-employee/view-employee.component';
+import { AnimatetextComponent } from './animation/animatetext/animatetext.component';
 
 @NgModule(
   {
@@ -40,13 +43,16 @@ import { RemoteEmployeeComponent } from './consume/remote-employee/remote-employ
     FormComponent ,
     Useservice1Component,
     RemoteComponent,
-    RemoteEmployeeComponent
+    RemoteEmployeeComponent,
+    ViewEmployeeComponent,
+    AnimatetextComponent
   ],
   imports: [ 
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       {
         path:"",
@@ -103,6 +109,14 @@ import { RemoteEmployeeComponent } from './consume/remote-employee/remote-employ
       {
         path:'employee',
         component:RemoteEmployeeComponent
+      },
+      {
+        path:'viewemployee/:empid',
+        component:ViewEmployeeComponent
+      },
+      {
+        path:'animate',
+        component:AnimatetextComponent
       }
 
       
