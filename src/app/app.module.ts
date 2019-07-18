@@ -24,6 +24,9 @@ import { RemoteComponent } from './consume/remote/remote.component';
 import { RemoteEmployeeComponent } from './consume/remote-employee/remote-employee.component';
 import { ViewEmployeeComponent } from './consume/view-employee/view-employee.component';
 import { AnimatetextComponent } from './animation/animatetext/animatetext.component';
+import { CheckPipe } from './custompipe/check.pipe';
+import { SortStringPipe } from './custompipe/sort-string.pipe';
+import { SortNumberPipe } from './custompipe/sort-number.pipe';
 
 @NgModule(
   {
@@ -45,7 +48,10 @@ import { AnimatetextComponent } from './animation/animatetext/animatetext.compon
     RemoteComponent,
     RemoteEmployeeComponent,
     ViewEmployeeComponent,
-    AnimatetextComponent
+    AnimatetextComponent,
+    CheckPipe,
+    SortStringPipe,
+    SortNumberPipe
   ],
   imports: [ 
     BrowserModule,

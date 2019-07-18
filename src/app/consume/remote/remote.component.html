@@ -1,1 +1,30 @@
 <p>remote works!</p>
+<p>
+    Friends Usorted : {{friends}}
+    <br>
+    Friends sorted: {{friends | sortString:'dsc'}}
+</p>
+<p>
+    Scores Usorted : {{scores}}
+    <br>
+    Scores sorted: {{scores | sortNumber}}
+</p>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ru of remoteUsers">
+            <td>{{ru.id}}</td>
+            <td>{{ru.name}}</td>
+            <td>{{ru.username}}</td>
+            <td>{{ru.email}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -27,11 +27,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let emp of allEmployees; let counter = index">
+            <tr *ngFor="let emp of allEmployees | sortString; let counter = index">
                 <td>{{emp.id}}</td>
-                <td>{{emp.employee_name}}</td>
+                <td>{{emp.employee_name   | uppercase }}</td>
                 <td>{{emp.employee_age}}</td>
-                <td>{{emp.employee_salary}}</td>
+                <td>{{emp.employee_salary | check}}</td>
                 <td>
                     <button (click)="viewEmployee(counter)">View</button>
                     <button (click)="deleteEmployee(counter)">Del</button>

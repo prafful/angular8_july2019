@@ -12,6 +12,10 @@ export class RemoteComponent implements OnInit {
 
   remoteUsers:any
 
+scores = [25, 35, 44, 88, 40, 9, 7]
+friends =["Ola", "Uber", "Eats", "Swiggy"]
+
+
   ngOnInit() {
     this.remoteService.getRemoteUsers()
                         .subscribe(data => {
