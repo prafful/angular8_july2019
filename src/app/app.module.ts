@@ -27,6 +27,7 @@ import { AnimatetextComponent } from './animation/animatetext/animatetext.compon
 import { CheckPipe } from './custompipe/check.pipe';
 import { SortStringPipe } from './custompipe/sort-string.pipe';
 import { SortNumberPipe } from './custompipe/sort-number.pipe';
+import { LivesearchPipe } from './custompipe/livesearch.pipe';
 
 @NgModule(
   {
@@ -51,7 +52,8 @@ import { SortNumberPipe } from './custompipe/sort-number.pipe';
     AnimatetextComponent,
     CheckPipe,
     SortStringPipe,
-    SortNumberPipe
+    SortNumberPipe,
+    LivesearchPipe
   ],
   imports: [ 
     BrowserModule,

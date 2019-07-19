@@ -11,7 +11,7 @@ export class RemoteComponent implements OnInit {
   constructor(private remoteService: RemoteServiceService) { }
 
   remoteUsers:any
-
+  searchtext:any
 scores = [25, 35, 44, 88, 40, 9, 7]
 friends =["Ola", "Uber", "Eats", "Swiggy"]
 
