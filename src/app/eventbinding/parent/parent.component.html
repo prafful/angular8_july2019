@@ -1,0 +1,7 @@
+<h3>Event Binding - Pass info from parent to child!</h3>
+
+Name: {{name}}
+<br>
+<input type="text" [(ngModel)]="name">
+
+<cts-child [sendme]="name"   (updatedName)="receivedUpdatedName($event)" ></cts-child>

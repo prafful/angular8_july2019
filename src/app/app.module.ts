@@ -28,6 +28,9 @@ import { CheckPipe } from './custompipe/check.pipe';
 import { SortStringPipe } from './custompipe/sort-string.pipe';
 import { SortNumberPipe } from './custompipe/sort-number.pipe';
 import { LivesearchPipe } from './custompipe/livesearch.pipe';
+import { ShopComponent } from './shop/shop/shop.component';
+import { ParentComponent } from './eventbinding/parent/parent.component';
+import { ChildComponent } from './eventbinding/child/child.component';
 
 @NgModule(
   {
@@ -53,7 +56,10 @@ import { LivesearchPipe } from './custompipe/livesearch.pipe';
     CheckPipe,
     SortStringPipe,
     SortNumberPipe,
-    LivesearchPipe
+    LivesearchPipe,
+    ShopComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [ 
     BrowserModule,
@@ -125,6 +131,10 @@ import { LivesearchPipe } from './custompipe/livesearch.pipe';
       {
         path:'animate',
         component:AnimatetextComponent
+      },
+      {
+        path:'eventbinding',
+        component:ParentComponent
       }
 
       

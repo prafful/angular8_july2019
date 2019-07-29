@@ -1,0 +1,6 @@
+<h4>Child Component</h4>
+Name: {{sendme}}
+<br>
+<input type="text" [(ngModel)]="sendme">
+&nbsp;
+<button (click)="broadcastName($event)">Broadcast</button>
